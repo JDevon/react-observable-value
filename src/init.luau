@@ -5,8 +5,8 @@ local ObservableValue = require(script.Parent.ObservableValue)
 --[=[
 	@class ReactObservableValue
 
-	React hooks for [ObservableValue](https://jdevon.github.io/observable-value/): read a value and rerender, select part of
-	it, or follow it with a binding.
+	React hooks for [ObservableValue](https://jdevon.github.io/observable-value/). Rerender when a value changes,
+	rerender only when part of it changes, or update a binding without rerendering.
 ]=]
 local ReactObservableValue = {}
 

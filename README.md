@@ -10,8 +10,8 @@
 
 # ReactObservableValue
 
-React hooks for [ObservableValue](https://github.com/JDevon/observable-value): read a value and rerender, select part
-of it, or follow it with a binding.
+React hooks for [ObservableValue](https://github.com/JDevon/observable-value). Rerender when a value changes, rerender
+only when part of it changes, or update a binding without rerendering.
 
 Full API reference at [jdevon.github.io/react-observable-value](https://jdevon.github.io/react-observable-value/).
 
