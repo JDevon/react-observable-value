@@ -1,0 +1,14 @@
+{
+	"name": "ReactObservableValueDev",
+	"tree": {
+		"$className": "DataModel",
+		"ReplicatedStorage": {
+			"Packages": {
+				"$path": "Packages",
+				"ReactObservableValue": {
+					"$path": "src"
+				}
+			}
+		}
+	}
+}

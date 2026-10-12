@@ -1,0 +1,26 @@
+[package]
+name = "jdevon/react-observable-value"
+description = "React hooks for ObservableValue."
+version = "0.1.0"
+license = "MIT"
+authors = ["JDevon"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+exclude = [
+	"sourcemap.json",
+	"dev.project.json",
+	"rokit.toml",
+	"selene.toml",
+	"moonwave.toml",
+	".luaurc",
+	".vscode",
+	"wally.lock",
+	"build",
+	".moonwave",
+	"**/.DS_Store",
+	".github",
+]
+
+[dependencies]
+ObservableValue = "jdevon/observable-value@0.1.0"
+React = "jsdotlua/react@17.0.0"
