@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[297],{4410:e=>{e.exports=JSON.parse('{"sourceUrl":"https://github.com/JDevon/react-observable-value/blob/master","baseUrl":"/react-observable-value/","classOrder":["ReactObservableValue"],"apiCategories":[]}')}}]);
