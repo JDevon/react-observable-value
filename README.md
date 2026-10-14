@@ -40,12 +40,12 @@ local ReactObservableValue = require(ReplicatedStorage.Packages.ReactObservableV
 local health = ObservableValue.new(100)
 
 local function HealthLabel()
-	-- rerenders whenever health changes
-	local currentHealth = ReactObservableValue.useObservableValue(health)
+    -- rerenders whenever health changes
+    local currentHealth = ReactObservableValue.useObservableValue(health)
 
-	return React.createElement("TextLabel", {
-		Text = `{currentHealth} HP`,
-	})
+    return React.createElement("TextLabel", {
+        Text = `{currentHealth} HP`,
+    })
 end
 
 health:set(80) -- every mounted HealthLabel now shows 80 HP
@@ -58,19 +58,19 @@ been changed in place:
 local inventory = ObservableValue.new({} :: { [string]: number })
 
 local function ItemCount()
-	local items, updateId = ReactObservableValue.useObservableValue(inventory)
+    local items, updateId = ReactObservableValue.useObservableValue(inventory)
 
-	local total = React.useMemo(function()
-		local count = 0
-		for _, quantity in items do
-			count += quantity
-		end
-		return count
-	end, { updateId })
+    local total = React.useMemo(function()
+        local count = 0
+        for _, quantity in items do
+            count += quantity
+        end
+        return count
+    end, { updateId })
 
-	return React.createElement("TextLabel", {
-		Text = `{total} items`,
-	})
+    return React.createElement("TextLabel", {
+        Text = `{total} items`,
+    })
 end
 ```
 
@@ -80,13 +80,13 @@ For values that change often, `useObservableBinding` follows the value with a Re
 local progress = ObservableValue.new(0)
 
 local function ProgressBar()
-	local progressBinding = ReactObservableValue.useObservableBinding(progress)
+    local progressBinding = ReactObservableValue.useObservableBinding(progress)
 
-	return React.createElement("Frame", {
-		Size = progressBinding:map(function(value)
-			return UDim2.fromScale(value, 1)
-		end),
-	})
+    return React.createElement("Frame", {
+        Size = progressBinding:map(function(value)
+            return UDim2.fromScale(value, 1)
+        end),
+    })
 end
 ```
 
@@ -96,14 +96,14 @@ To rerender only when part of a value changes, `useObservableSelector` returns w
 local blurStack = ObservableValue.new({} :: { [number]: true })
 
 local function BlurOverlay()
-	-- rerenders only when the stack goes from empty to not empty, or back
-	local isVisible = ReactObservableValue.useObservableSelector(blurStack, function(stack)
-		return next(stack) ~= nil
-	end)
+    -- rerenders only when the stack goes from empty to not empty, or back
+    local isVisible = ReactObservableValue.useObservableSelector(blurStack, function(stack)
+        return next(stack) ~= nil
+    end)
 
-	return React.createElement("Frame", {
-		Visible = isVisible,
-	})
+    return React.createElement("Frame", {
+        Visible = isVisible,
+    })
 end
 ```
 
